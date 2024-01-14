@@ -1,0 +1,18 @@
+PROGRAM DoCopy(INPUT, OUTPUT);
+PROCEDURE RCopy (VAR F1: TEXT);
+VAR
+  Ch: CHAR;
+BEGIN
+  IF NOT EOLN(F1)
+  THEN 
+    BEGIN
+      READ(F1, Ch);
+      WRITE(OUTPUT, Ch);
+      RCopy(F1)
+    END
+END;
+
+BEGIN
+  RCopy(INPUT);
+  WRITELN
+END.
